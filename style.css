@@ -1,0 +1,106 @@
+/* Calculator layout and visual styles. */
+
+
+:root {
+  --page-colour:    #ffffff;  /* Page background */
+  --calc-colour:    #000000;  /* Calculator body */
+  --screen-colour:  #333333;  /* Display */
+  --number-colour:  #4d4d4d;  /* Number buttons */
+  --light-colour:   #a6a6a6;  /* AC button */
+  --orange-colour:  #ff9500;  /* Operator buttons */
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--page-colour);
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.calculator {
+  background: var(--calc-colour);
+  width: 400px;
+  padding: 118px 20px 40px;
+  border-radius: 20px;
+}
+
+
+.display {
+  background: var(--screen-colour);
+  height: 80px;
+  border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+
+    color: white;
+    font-family: "Times New Roman", serif;
+  font-size: 40px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+
+  gap: 30px 40px;
+}
+
+
+button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+
+  background: var(--number-colour);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+button:active {
+  filter: brightness(1.3);
+}
+
+
+
+.gray {                          
+  background: var(--light-colour);
+  color: black;
+}
+
+.orange {                        
+  background: var(--orange-colour);
+}
+
+.zero {                          
+  grid-column: span 2;
+  width: auto;
+  border-radius: 30px;
+}
+
+
+@media (max-width: 440px) {
+  .calculator {
+    transform: scale(0.8);
+  }
+}
